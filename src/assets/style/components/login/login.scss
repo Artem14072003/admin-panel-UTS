@@ -1,0 +1,32 @@
+.login {
+  flex: 1;
+  @include flex();
+
+  & &-container {
+    margin: 95px auto;
+    .login-title {
+      margin-bottom: 50px;
+    }
+
+    .login-form {
+      .block-input {
+        &:first-of-type {
+          margin-bottom: 30px;
+        }
+        &:last-of-type {
+          margin-bottom: 60px;
+        }
+
+      }
+
+      .btn {
+        font-family: "Lato-Medium", sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
+        padding: 25px;
+        width: 100%;
+      }
+    }
+  }
+}

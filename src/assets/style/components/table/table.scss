@@ -1,0 +1,170 @@
+.table-wrapper {
+  &_container {
+    .table {
+      width: 100%;
+
+      &-head {
+        display: grid;
+        align-content: center;
+        align-items: baseline;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        font-family: "Lato-Bold", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: $netral-dark;
+        background-color: $red-3;
+
+        .table-content {
+          position: relative;
+
+          &_title {
+            &:not(&:last-child) {
+              padding: 25px 30px 25px 0;
+            }
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $netral-dark;
+          }
+        }
+
+      }
+
+      &-body {
+        font-family: "Lato-Medium", sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: $netral-7;
+
+        .table-content {
+          display: grid;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
+          grid-template-columns: repeat(4, 1fr);
+          position: relative;
+
+          &_image,
+          &_title,
+          &_price,
+          &_btn {
+            padding: 15px 30px 8px 0;
+          }
+
+          &_image {
+            .image {
+              width: 215px;
+              height: 122px;
+              object-fit: contain;
+            }
+          }
+
+          &_title {
+            max-width: 247px;
+          }
+
+          &_btn {
+            padding: 15px 0 8px;
+
+            button:first-of-type {
+              margin-right: 30px;
+            }
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $netral-dark;
+          }
+        }
+      }
+
+      .content {
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin: 0 !important;
+
+      .table {
+        &-head {
+          grid-template-columns: auto;
+          gap: 37px;
+          padding: 25px 0;
+
+          .table-content {
+
+            &_title {
+              &:not(&:last-child) {
+                padding: 0;
+              }
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              height: 1px;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: $netral-dark;
+            }
+          }
+
+        }
+
+        &-body {
+          font-family: "Lato-Medium", sans-serif;
+          font-size: 26px;
+          font-weight: 500;
+          line-height: 1.2;
+          color: $netral-7;
+
+          .table-content {
+            grid-template-columns: auto;
+            gap: 20px;
+
+            &_image,
+            &_title,
+            &_price,
+            &_btn {
+              padding: 0
+            }
+
+            &_image {
+              .image {
+                width: 215px;
+                height: 122px;
+                object-fit: contain;
+              }
+            }
+
+            &_title {
+              max-width: 247px;
+            }
+
+            &_btn {
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.head {
+  margin: 40px 0 115px;
+
+  &-container {
+    font-family: "Lato-Medium", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.2;
+    @include flex($content: space-between, $items: center, $gap: 60px);
+
+    .search {
+      position: relative;
+
+      &-input {
+        height: 58px;
+
+        &::-webkit-search-cancel-button {
+          padding-right: 10px;
+        }
+      }
+
+      &-btn {
+        position: absolute;
+        right: -30px;
+        top: -4px;
+        bottom: -3px;
+        border-radius: 50px;
+        padding: 20px 21px;
+
+        &:disabled {
+          cursor: default;
+          background-color: $red-3;
+        }
+      }
+    }
+
+    &_btn {
+      border-radius: 20px;
+    }
+
+
+    @media (max-width: 768px) {
+      &_btn {
+        display: none;
+      }
+    }
+  }
+}

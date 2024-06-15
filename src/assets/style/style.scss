@@ -1,0 +1,261 @@
+@import "./reset/reset.css";
+@import 'settings/style';
+@import "components/login/login";
+@import "components/alert/alert";
+@import "components/nav/nav";
+@import "components/head/head";
+@import "components/pagination/pagination";
+@import "components/table/table";
+@import "components/calculator/calculator";
+@import "components/settings/settings";
+@import "components/block-image/block-image";
+@import "components/popapp/popapp";
+@import "components/loading/loading";
+@import "components/adaptive-menu/adaptive-menu";
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+
+  body {
+    font-family: 'Lato-Regular', sans-serif;
+    height: 100%;
+    font-size: 15px;
+
+    #root {
+      min-height: 100%;
+      display: flex;
+
+      h1 {
+        &.title {
+          text-align: center;
+          font-family: "Lato-Bold", sans-serif;
+          font-weight: 700;
+          line-height: 1.2;
+          font-size: clamp(32px, 5vw, 56px);
+          color: $netral-8;
+
+          &.calculator-title,
+          &.settings-title {
+            margin-bottom: 67px;
+            font-size: clamp(32px, 5vw, 46px) !important;
+          }
+        }
+
+        &.hidden {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      main {
+        flex: 1;
+        margin-left: 258.75px;
+      }
+    }
+
+    // Стили для UI
+
+    .container {
+      max-width: 1440+100px;
+      margin: 0 auto 0 20px;
+      padding-right: 100px;
+    }
+
+    p.errors {
+      color: $red-5;
+      padding: 10px 0 0 20px;
+    }
+
+    .btn {
+      color: $netral-white;
+      background-color: $red-5;
+      padding: 10px 25px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      @include transition(background-color, color, border-color, box-shadow);
+
+      path {
+        @include transition(fill);
+      }
+
+      &-primary {
+        color: $red-5;
+        background-color: $netral-white;
+        border: 1px solid $red-5;
+        box-shadow: 0 0 25px rgba(180, 13, 13, 0.2);
+        @include transition(background-color, color, border-color);
+
+        line {
+          @include transition(stroke)
+        }
+
+        &:not(&:disabled):hover {
+          color: $netral-white;
+          background-color: $red-5;
+          border-color: transparent;
+
+          line {
+            stroke: $netral-white;
+          }
+        }
+      }
+
+      &-submit {
+        font-family: "Lato-Medium", sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0 98px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        
+        @media (max-width: 768px) {
+          margin: 0;
+        }
+      }
+
+      &-gray {
+        color: $netral-7;
+        background-color: $netral-white;
+        border: 2px solid $netral-7;
+
+        @if (path) {
+          path {
+            @include transition(stroke);
+            stroke: $netral-7;
+          }
+        }
+
+        &:not(&:disabled):hover {
+          @if (path) {
+            path {
+              stroke: $netral-white;
+            }
+          }
+
+          background-color: $red-5;
+          color: $netral-white;
+          border: 2px solid transparent;
+        }
+      }
+
+      &:not(&-primary):not(&-gray):not(:disabled):hover {
+        color: $red-5;
+        box-shadow: 0 0 25px rgba(180, 13, 13, 0.2);
+        background-color: $netral-white;
+        border-color: $red-5;
+
+        path {
+          fill: $red-5;
+        }
+      }
+    }
+
+    .form-calc_setting {
+      max-width: 610px;
+      margin: 0 auto;
+      @include flex($direction: column, $items: stretch);
+
+      .block-input:last-of-type {
+        margin-bottom: 15px;
+
+        input {
+          padding: 23px 150px 23px 37px;
+        }
+
+      }
+    }
+
+    label {
+      display: block;
+      font-family: "Lato-Medium", sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: $netral-dark;
+      padding: 0 0 10px 30px;
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 23px 31px 23px 37px;
+      border: 1px solid $red-3;
+      font-family: "Lato-Medium", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: $netral-dark;
+      @include transition(border-color, box-shadow);
+
+      &:focus {
+        border-color: $red-5;
+        outline: none;
+      }
+    }
+
+    input[type=range] {
+      accent-color: $red-5;
+      background-color: white;
+      padding: 0;
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        margin: 0 clamp(15px, 5vw, 90px) !important;
+      }
+
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  .block-select {
+    position: relative;
+
+    select {
+      width: 100%;
+      cursor: pointer;
+      appearance: none;
+
+      option {
+        color: $netral-7;
+
+        &:hover {
+          color: $red-5;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      width: 25px;
+      height: 16px;
+      background: url(/public/image/arrow-select.svg) no-repeat center / cover;
+      cursor: pointer;
+    }
+  }
+
+  textarea {
+    resize: none;
+    min-height: 165px;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .open:focus {
+    outline: none;
+  }
+
+  .calculator .block-input,
+  .settings .block-input {
+    margin-bottom: 40px;
+  }
+}
+

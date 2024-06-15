@@ -1,0 +1,11 @@
+.settings {
+  margin: 43px 0 118px;
+
+  @media (max-width: 1024px) {
+    .burger_menu {
+      display: flex;
+      justify-content: end;
+      padding: 20px 0;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.calculator {
+  margin: 43px 0 102px;
+
+  &-container {
+
+    .calculator-title {
+      margin-bottom: 67px;
+    }
+
+
+    .loanTerm {
+      position: relative;
+      margin-bottom: 85px + 35px;
+
+      &-panel {
+        .btn {
+          font-family: "Lato-Medium", sans-serif;
+          font-size: 26px;
+          font-weight: 500;
+          line-height: 1.2;
+          position: absolute;
+          right: 0;
+          top: 41px;
+          padding: 19.5px 12px;
+        }
+      }
+
+      &-buttons {
+        @include flex($content: stretch, $gap: 10px);
+        font-family: "Lato-Medium", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        flex-wrap: wrap;
+
+
+        .btn-primary {
+          @include flex($gap: 10px, $items: baseline);
+          border-radius: 20px;
+        }
+      }
+
+    }
+
+    .btn-submit {
+      font-family: "Lato-Medium", sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.2;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .burger_menu {
+      display: flex;
+      justify-content: end;
+      padding: 20px 0;
+    }
+
+    &-container {
+      margin: 0 !important;
+
+      .btn-submit {
+        margin: 0!important;
+      }
+    }
+  }
+}

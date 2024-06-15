@@ -1,0 +1,66 @@
+.pagination {
+  margin: 115px 0 80px;
+  &-container {
+    margin: 115px auto 80px 20px;
+    @include flex($content: center);
+
+    .pagination-wrapper {
+      width: 100%;
+      @include flex($content: space-between);
+      flex-basis: 340px;
+
+      .btn-arrow {
+        padding: 10px 12px;
+        @include flex();
+        box-shadow: none;
+
+        path {
+          @include transition(fill);
+          fill: $red-5;
+        }
+
+        &:disabled {
+          background-color: $red-5;
+          color: $netral-white;
+
+          path {
+            fill: $netral-white;
+          }
+        }
+
+        &:hover {
+          path {
+            fill: $netral-white;
+          }
+        }
+
+        &:last-of-type {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .pagination-content {
+        @include flex($gap: 21px);
+        font-family: "Lato-Bold", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+
+        button {
+          @include transition(color);
+
+          &.active {
+            color: $red-5;
+          }
+
+          &:not(&.active):hover {
+            color: $red-5;
+          }
+        }
+      }
+
+    }
+  }
+}

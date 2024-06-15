@@ -1,0 +1,298 @@
+.popapp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 5;
+
+  @include flex();
+
+  .popapp-container {
+    padding: 20px 160px 30px;
+    position: relative;
+    cursor: default;
+    background-color: $netral-white;
+
+    .popapp-title {
+      font-family: "Lato-Bold", sans-serif;
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.2;
+      padding-bottom: 20px;
+      text-align: center;
+      color: $netral-8
+    }
+
+    .popapp-cross {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+
+      line {
+        stroke: $netral-7;
+        @include transition(stroke);
+
+      }
+
+      &:hover {
+        line {
+          stroke: $netral-dark;
+        }
+      }
+    }
+
+    .poppap-content {
+      .popapp_form {
+        @include flex($gap: 30px, $direction: column, $content: stretch, $items: stretch);
+
+        .popapp_columns {
+          @include flex($content: center, $gap: 87px);
+          flex-wrap: wrap;
+
+          .column {
+            align-self: stretch;
+          }
+
+          .popapp-one_column {
+            flex-basis: 340px;
+            @include flex($direction: column, $gap: 35px, $items: stretch, $content: stretch);
+
+            .block-image {
+              margin: 0;
+              text-align: center;
+
+              .block-image_wrapper {
+              padding: 0;
+                color: $netral-7;
+
+                span {
+                  font-size: 15px;
+                  font-family: "Lato-Regular", sans-serif;
+                  font-weight: 400;
+                  padding-top: 12px;
+                }
+              }
+            }
+
+            .block-input {
+
+              label {
+                font-size: 20px;
+                text-transform: uppercase;
+              }
+
+              input,
+              select {
+                height: 47px;
+                font-family: "Lato-Regular", sans-serif;
+                font-weight: 400;
+                line-height: 1.2;
+                font-size: 15px;
+              }
+
+              select {
+                padding: 0 31px 0 37px;
+              }
+            }
+          }
+
+          .popapp-two_column {
+
+            .technical {
+              height: 48px;
+              max-width: 345px;
+              @include flex($gap: 16px);
+
+              &:not(&:last-of-type) {
+                margin-bottom: 10px;
+              }
+
+              label,
+              .block-input {
+                flex: 1 0 162px;
+              }
+
+              label,
+              input {
+                padding: 0;
+                font-family: "Lato-Regular", sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+              }
+
+              input {
+                padding: 13px 10px;
+              }
+
+              label {
+                align-self: stretch;
+                @include flex();
+                border: 1px solid $red-3;
+                padding: 0;
+              }
+            }
+
+            .errors {
+              padding: 0;
+              text-align: end;
+              margin-bottom: 10px;
+            }
+          }
+
+          .popapp-three_column {
+            max-width: 380px;
+            @include flex($direction: column, $gap: 14px, $items: stretch, $content: stretch);
+            flex: 1 0 290px;
+
+            .title {
+              font-size: 18px;
+            }
+
+            .inputs-title_value {
+              ul > li {
+                @include flex($gap: 21px);
+
+                button {
+                  order: -1;
+                  width: 13px;
+                  height: 13px;
+                  flex: 1 0 13px;
+
+                  line {
+                    stroke: $netral-dark;
+                  }
+                }
+
+                input {
+                  font-family: "Lato-Regular", sans-serif;
+                  font-weight: 400;
+                  line-height: 1.2;
+                  font-size: 15px;
+                  flex-basis: 162px;
+                  height: 48px;
+                  padding: 12px 10px;
+                }
+
+                margin-bottom: 24px;
+
+                .block-input {
+                  @include flex($content: space-between, $gap: 21px);
+                }
+              }
+
+              .btn {
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-family: "Lato-Medium", sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.2;
+              }
+            }
+          }
+        }
+
+        .btn-submit {
+          padding: 20px 110px;
+          align-self: center;
+        }
+      }
+
+    }
+
+    &.spare-parts-container {
+      padding: 20px 120px 30px;
+      flex: 0 0 1060px;
+
+      .block-title_value {
+        font-size: 18px;
+      }
+    }
+
+    &.create-container {
+      height: 100%;
+      padding: 20px 102px 30px;
+
+      .popapp-title {
+        margin: 57px 0 15px;
+      }
+
+      .popapp-cross {
+        top: 26px;
+        right: 107px;
+      }
+    }
+
+    &.delete-container {
+      padding: 68px 70px 30px;
+
+      .popapp-title {
+        max-width: 740px;
+        font-family: "Lato-Bold", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .poppap-content {
+        @include flex($gap: 14px, $content: stretch, $items: stretch);
+        flex-wrap: wrap;
+
+        .btn {
+          font-family: "Lato-Medium", sans-serif;
+          font-size: 20px;
+          font-weight: 50;
+          line-height: 1.2;
+          padding: 20px 40px;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  &.create {
+    display: block;
+    min-height: 100%;
+    overflow-y: auto;
+    cursor: default;
+    background-color: $netral-white;
+  }
+
+  h2.title {
+    font-family: "Lato-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 1085px) {
+    &.spare-parts {
+      display: block;
+      overflow-y: auto;
+
+      .spare-parts-container {
+          min-height: 100%;
+        padding: clamp(40px, 5vw, 20px) clamp(15px, 5vw, 100px) 30px;
+
+        .block-title_value {
+          font-size: 18px;
+        }
+
+        .btn-submit {
+          padding: 20px 0!important;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

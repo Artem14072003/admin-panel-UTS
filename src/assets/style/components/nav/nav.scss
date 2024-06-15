@@ -1,0 +1,142 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: $red-3;
+  @include flex($direction: column, $content: space-between, $gap: 38px);
+  font-family: "Lato-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 30px 70px 52px;
+
+  .close {
+    display: none;
+    width: auto;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    top: 0;
+    right: 0;
+    padding: 10px 15px;
+
+    line {
+      stroke: $netral-dark !important;
+    }
+
+    &:hover {
+      background-color: transparent !important;
+      border: none;
+      box-shadow: none;
+
+      line {
+        stroke: $netral-dark !important;
+      }
+    }
+  }
+
+  &-content {
+    .logo {
+      margin-bottom: 45px;
+
+      img {
+        max-width: 81px;
+        max-height: 81px;
+        border-radius: 50px;
+        object-fit: contain;
+      }
+
+      .isLoading {
+        width: 81px;
+        height: 81px;
+      }
+    }
+
+    .nav-links {
+      .nav-link {
+        &:not(&:last-child) {
+          padding-bottom: 38px;
+        }
+
+        .link {
+          @include transition(color);
+          color: $netral-dark;
+
+          &:not(.active):hover {
+            color: $red-5;
+          }
+
+          &.active {
+            color: $red-5;
+          }
+        }
+      }
+
+      .nav-wrapper_btn {
+        display: none;
+
+        .nav-btn {
+          padding: 0;
+          background-color: transparent;
+          color: $netral-dark;
+        }
+      }
+    }
+  }
+
+  button {
+    text-align: left;
+    width: 100%;
+    @include transition(color);
+
+    &:hover {
+      color: $red-5;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-250px);
+    @include transition(visibility, opacity, transform);
+    z-index: 1;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    button {
+      text-align: center;
+    }
+
+    .close {
+      display: block;
+    }
+
+    &-content {
+      .nav-links {
+        .nav-wrapper_btn {
+          display: block;
+          .nav-btn {
+            display: block;
+            border: none;
+            &:hover {
+              background-color: transparent!important;
+              box-shadow: none!important;
+              border: none!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

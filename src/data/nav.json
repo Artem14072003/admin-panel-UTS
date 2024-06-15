@@ -1,0 +1,20 @@
+{
+  "nav": [
+    {
+      "name": "Главная",
+      "to": "/admin"
+    },
+    {
+      "name": "Запчасти",
+      "to": "/admin/spare-parts"
+    },
+    {
+      "name": "Калькулятор",
+      "to": "/admin/calculators"
+    },
+    {
+      "name": "Настройки",
+      "to": "/admin/update"
+    }
+  ]
+}
