@@ -16,7 +16,7 @@ export const dataSpareParts: IDataSpareParts = {
                 title: "Наименование",
                 type: "text",
                 name: "title",
-                placeholder: "Описание",
+                placeholder: "Введите наименования запчасти",
                 option: {
                     required: "Это поле обязательно!",
                 },
@@ -25,9 +25,17 @@ export const dataSpareParts: IDataSpareParts = {
                 title: "Цена",
                 type: "number",
                 name: "price",
-                placeholder: "Описание",
+                placeholder: "Введите стоймость запчасти",
                 option: {
                     required: "Это поле обязательно!",
+                    min: {
+                        value: 1000,
+                        message: "Введите корректную сумму для запчасти!"
+                    },
+                    max: {
+                        value: 1000000,
+                        message: "Слишком большая наценка для запчасти!"
+                    },
                 },
             }, {
                 id: "model",
@@ -81,7 +89,7 @@ export const dataSpareParts: IDataSpareParts = {
             }
         },
         articul: {
-            title: 'Атрибут',
+            title: 'Артикул',
             input: {
                 id: "articul",
                 type: "text",

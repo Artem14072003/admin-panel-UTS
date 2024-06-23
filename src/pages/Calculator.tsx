@@ -53,8 +53,8 @@ const Calculator = () => {
 
     useEffect(() => {
         if (!isLoading) {
-            setValue('maxlizing', data?.data[0].maxlizing)
-            setValue('minlizing', data?.data[0].minlizing)
+            setValue('max_lizing', data?.data[0].maxlizing)
+            setValue('min_lizing', data?.data[0].minlizing)
             setValue('percent', data?.data[0].percent)
             setSelect(data?.data[0].term)
         }
@@ -62,10 +62,10 @@ const Calculator = () => {
 
     const setSettingsCalc = handleSubmit((data) => {
         if (!select.length) return setError('selected', {type: 'required', message: 'Это поле обязательно'})
+        console.log({...data, term: JSON.stringify(select)})
         mutate({...data, term: JSON.stringify(select)})
     })
 
-    console.log()
     return (
         <AdminLayout setActive={setActive} active={active} className={'calculator'}>
             <AdaptiveMenu setActive={setActive} active={active}/>

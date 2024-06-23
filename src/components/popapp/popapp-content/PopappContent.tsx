@@ -108,18 +108,24 @@ const PopappContent = ({
                             <div className="inputs-title_value">
                                 <ul>
                                     {data.data.articul && (
-                                        <li>
-                                            <Input
-                                                id={data.data.articul.input.id}
-                                                title={data.data.articul.title}
-                                                type={data.data.articul.input.type}
-                                                name={data.data.articul.input.name}
-                                                placeholder={data.data.articul.input.placeholder}
-                                                option={data.data.articul.input.option}
-                                                register={register}
-                                                errors={errors[data.data.articul.input.name]}
-                                            />
-                                        </li>
+                                        <>
+                                            <li className={errors && errors[data.data.articul.input.name] ? 'error' : ''}>
+                                                <Input
+                                                    id={data.data.articul.input.id}
+                                                    title={data.data.articul.title}
+                                                    type={data.data.articul.input.type}
+                                                    name={data.data.articul.input.name}
+                                                    placeholder={data.data.articul.input.placeholder}
+                                                    option={data.data.articul.input.option}
+                                                    register={register}
+                                                />
+                                            </li>
+                                            {errors && errors[data.data.articul.input.name] &&
+                                                <p className={'errors errors-atribut'}>
+                                                    {`${errors[data.data.articul.input.name]?.message}`}
+                                                </p>
+                                            }
+                                        </>
                                     )}
                                     {fields.map((item, index) => (
                                         <li key={item.id}>

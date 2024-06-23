@@ -64,6 +64,7 @@ const PopappCreateTruck = ({setPopapp, idx, data}: IPopappCreate) => {
         if (isError) {
             return setPopapp((prev) => ({...prev, create: false}))
         }
+        console.log(truck ? truck : [])
         if (!isLoading && (idx && isSuccess && truck)) {
             setValue('image', truck.swiper)
             setValue('title', truck.cardInfo[0].title)
@@ -74,6 +75,8 @@ const PopappCreateTruck = ({setPopapp, idx, data}: IPopappCreate) => {
                 const specifications = truck.options.find((search: {
                     title: string
                 }) => search.title.includes(option.title))
+                console.log(truck.options)
+                if (!specifications) return
                 setValue(option.input.name, specifications.value)
             })
             setValue("add", truck.add)

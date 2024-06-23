@@ -16,7 +16,7 @@ export const dataTruck: IDataTruck = {
                 title: "Наименование",
                 type: "text",
                 name: "title",
-                placeholder: "Описание",
+                placeholder: "Введите наименование грузовика",
                 option: {
                     required: "Это поле обязательно!",
                 },
@@ -25,9 +25,17 @@ export const dataTruck: IDataTruck = {
                 title: "Цена",
                 type: "number",
                 name: "price",
-                placeholder: "Описание",
+                placeholder: "Стоймость грузовика",
                 option: {
                     required: "Это поле обязательно!",
+                    min: {
+                        value: 1000000,
+                        message: "Стоимость грузового автомобиля должна быть больше 1 000 000 рублей!"
+                    },
+                    max:  {
+                        value: 100000000,
+                        message: "Слишком большая наценка грузового автомобиля!"
+                    },
                 },
             }, {
                 id: "model",

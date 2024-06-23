@@ -42,7 +42,7 @@ const LoanTerm = ({register, errors, resetField, getValues, select, setError, se
                     type={'number'}
                     name={'selected'}
                     title={'Срок кредита'}
-                    placeholder={'Введите срок кредита в годах'}
+                    placeholder={'Введите срок кредита в месяцах'}
                     register={register}
                     errors={errors['selected']}
                 />

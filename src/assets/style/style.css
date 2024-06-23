@@ -619,7 +619,7 @@
 }
 .block-image .errors {
   position: absolute;
-  bottom: -10px;
+  bottom: -22px;
   flex: 1 0 100%;
 }
 .block-image.active {
@@ -823,6 +823,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 21px;
+}
+.popapp .popapp-container .poppap-content .popapp_form .popapp_columns .popapp-three_column .inputs-title_value ul > li.error {
+  margin-bottom: 10px;
 }
 .popapp .popapp-container .poppap-content .popapp_form .popapp_columns .popapp-three_column .inputs-title_value .btn {
   width: 100%;
@@ -1048,6 +1051,11 @@ html body p.errors {
   color: rgb(245, 87, 87);
   padding: 10px 0 0 20px;
 }
+html body p.errors-atribut {
+  text-align: right;
+  padding: 0 17px;
+  margin: 0 0 24px;
+}
 html body .btn {
   color: #FFFFFF;
   background-color: rgb(245, 87, 87);
@@ -1126,6 +1134,9 @@ html body .btn:not(html body .btn-primary):not(html body .btn-gray):not(:disable
 }
 html body .btn:not(html body .btn-primary):not(html body .btn-gray):not(:disabled):hover path {
   fill: rgb(245, 87, 87);
+}
+html body .btn:disabled {
+  cursor: default;
 }
 html body .form-calc_setting {
   max-width: 610px;

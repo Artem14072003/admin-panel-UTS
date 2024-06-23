@@ -3,7 +3,7 @@ export const calculator = {
     data: [
         {
             id: 'maxlizing',
-            name: 'maxlizing',
+            name: 'max_lizing',
             type: 'number',
             title: 'Максимальный лизинг',
             placeholder: 'Введите минимальный лизинг',
@@ -19,7 +19,7 @@ export const calculator = {
         },
         {
             id: 'minlizing',
-            name: 'minlizing',
+            name: 'min_lizing',
             type: 'number',
             title: 'Минимальный лизинг',
             placeholder: 'Введите минимальный лизинг',

@@ -55,6 +55,8 @@ const BlockImage = ({
         }
         if (!setValue) return
         setValue('image', Array.isArray(base) ? [...base] : base)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [base, watch && watch('image')]);
 
     return (
